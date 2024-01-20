@@ -16,10 +16,12 @@ void main(){
       textTheme: const TextTheme(
         displayLarge: TextStyle(color: Color(0xFFBE3144)),
         bodyLarge: TextStyle(color: Colors.white),
-        bodyMedium: TextStyle(color: Color(0xFFF05941)),
+        // bodyMedium: TextStyle(color: Color(0xFFF05941)),
+        bodyMedium: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
       ),
       iconTheme: const IconThemeData(
-        color: Color(0xFFBE3144),
+        color: Color.fromARGB(255, 255, 255, 255),
+        // color: Color(0xFFBE3144),
       ),
       appBarTheme:const AppBarTheme(
         color: Color(0xFF22092C),
