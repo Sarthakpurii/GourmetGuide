@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gourmet/screens/categories-screen.dart';
+import 'package:gourmet/screens/meals-screen.dart';
+
 
 void main(){
   runApp(
@@ -30,7 +32,8 @@ void main(){
     ),
 
 
-      home: const CategoriesScreen(),
+      // home: MealsScreen(title: 'Summer', meals: []),
+      home: CategoriesScreen(),
     )
   );
 }

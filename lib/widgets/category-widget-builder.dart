@@ -3,14 +3,15 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:gourmet/models/category.dart';
 
 class CategoryBuilder extends StatelessWidget{
-  const CategoryBuilder({super.key,required this.category});
+  const CategoryBuilder({super.key,required this.category,required this.selectCategory});
 
   final Category category;
+  final void Function() selectCategory;
 
   @override
   Widget build(context){
     return InkWell(
-      onTap: () => {},
+      onTap: selectCategory,
       splashColor: Theme.of(context).primaryColor,
       borderRadius: BorderRadius.circular(16),
       child: Container(

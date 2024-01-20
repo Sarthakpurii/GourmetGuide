@@ -10,13 +10,8 @@ class MealItem extends StatelessWidget{
   @override
   Widget build(context){
     Widget mainContent= Container();
-    if meals.isEmpty{
-      mainContent= Center(
-        child: Column(children: [
-          Image.asset()
-        ]),
-      )
-    }
+
+    
     return mainContent;
   }
 }
