@@ -2,17 +2,7 @@
 enum Affordability{ Cheap, Affordable, Expensive }
 enum Complexity{Easy, Moderate, Hard}
 
-// enum Complexity {
-//   simple,
-//   challenging,
-//   hard,
-// }
 
-// enum Affordability {
-//   affordable,
-//   pricey,
-//   luxurious,
-// }
 class Meal{
   const Meal({required this.id,
   required this.title,

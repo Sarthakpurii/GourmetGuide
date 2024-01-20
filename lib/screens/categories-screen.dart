@@ -1,8 +1,8 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:gourmet/Categories%20Screen/Category%20Widget/category-widget-builder.dart';
 import 'package:gourmet/data/dummy-data.dart';
+import 'package:gourmet/widgets/category-widget-builder.dart';
 
 class CategoriesScreen extends StatelessWidget{
   const CategoriesScreen({super.key});
