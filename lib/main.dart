@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gourmet/screens/categories-screen.dart';
+import 'package:google_fonts/google_fonts.dart';
+// import 'package:gourmet/screens/categories-screen.dart';
+import 'package:gourmet/screens/home-screen.dart';
 
 void main(){
   runApp(
@@ -21,9 +23,14 @@ void main(){
         color: Color.fromARGB(255, 255, 255, 255),
         // color: Color(0xFFBE3144),
       ),
-      appBarTheme:const AppBarTheme(
+      appBarTheme:AppBarTheme(
         color: Color(0xFF22092C),
-        foregroundColor: Colors.white,
+        elevation: 3,
+        foregroundColor: Color.fromARGB(255, 240, 95, 73),
+        titleTextStyle: GoogleFonts.philosopher(
+          fontSize: 20,
+          color: Color.fromARGB(255, 240, 95, 73),
+        ),
         iconTheme: IconThemeData(color: Color(0xFF872341)),
       ),
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
@@ -33,7 +40,7 @@ void main(){
 
 
       // home: MealsScreen(title: 'Summer', meals: []),
-      home: CategoriesScreen(),
+      home: const HomeScreen(),
     )
   );
 }
