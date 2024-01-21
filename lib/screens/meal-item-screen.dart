@@ -4,16 +4,19 @@ import 'package:gourmet/models/meal.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class MealItemScreen extends StatelessWidget {
-  const MealItemScreen({super.key, required this.meal});
+  const MealItemScreen({super.key, required this.meal, required this.toggleFav});
 
   final Meal meal;
+  final void Function(Meal meal) toggleFav;
+
+ 
 
   @override
   Widget build(context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(meal.title),
-        actions: [IconButton(onPressed: (){}, icon: Icon(Icons.star))],
+        actions: [IconButton(onPressed: (){toggleFav(meal);}, icon: Icon(Icons.star))],
       ),
       body: SingleChildScrollView(
         child: Column(

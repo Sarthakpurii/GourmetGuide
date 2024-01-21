@@ -2,18 +2,21 @@
 import 'package:flutter/material.dart';
 import 'package:gourmet/data/dummy-data.dart';
 import 'package:gourmet/models/category.dart';
+import 'package:gourmet/models/meal.dart';
 import 'package:gourmet/screens/meals-screen.dart';
 import 'package:gourmet/widgets/category-widget-builder.dart';
 
 class CategoriesScreen extends StatelessWidget {
-  const CategoriesScreen({super.key});
+  const CategoriesScreen({super.key, required this.toggleFav});
+
+  final void Function(Meal meal) toggleFav;
 
   void _selectCategory(BuildContext context, Category category) {
     final filteredMeals =
         dummyMeals.where((meals) => meals.categories.contains(category.id)).toList();
 
     Navigator.of(context).push(MaterialPageRoute(
-        builder: (ctx) => MealsScreen(title: category.title, meals: filteredMeals)));
+        builder: (ctx) => MealsScreen(title: category.title, meals: filteredMeals,toggleFav: toggleFav,)));
   }
 
   @override

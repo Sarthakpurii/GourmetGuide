@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:gourmet/models/meal.dart';
 import 'package:gourmet/screens/categories-screen.dart';
 import 'package:gourmet/screens/meals-screen.dart';
+import 'package:gourmet/widgets/home-side-drawer.dart';
 
 class HomeScreen extends StatefulWidget{
   const HomeScreen({super.key});
@@ -16,7 +17,7 @@ class HomeScreen extends StatefulWidget{
 class _HomeScreenState extends State<HomeScreen>{
 
   int _selectedPageIndex=0;
-  List<Meal> _favoriteMeals=[];
+  final List<Meal> _favoriteMeals=[];
 
   void _selectPage(int index){
     setState(() {
@@ -24,26 +25,34 @@ class _HomeScreenState extends State<HomeScreen>{
     });
   }
 
+  void showFavUpdateSnackbar(String message){
+    ScaffoldMessenger.of(context).clearSnackBars();
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
+  }
+
+
   void _toggleFavorites(Meal meal){
     bool exist=_favoriteMeals.contains(meal);
 
     if (exist){
       setState(() {
         _favoriteMeals.remove(meal);
+        showFavUpdateSnackbar('Removed from Favorites');
       });
     } else {
       _favoriteMeals.add(meal);
+      showFavUpdateSnackbar('Added to Favorites');
     }
   }
 
   @override
   Widget build(context){
 
-    Widget selectedPage=const CategoriesScreen();
+    Widget selectedPage=CategoriesScreen(toggleFav: _toggleFavorites,);
     String selectedPageTitle='GourmetGuide';
 
     if (_selectedPageIndex==1){
-      selectedPage=const MealsScreen(meals: []);
+      selectedPage=MealsScreen(meals: _favoriteMeals,toggleFav: _toggleFavorites,);
       selectedPageTitle='Favorites';
     }
 
@@ -54,11 +63,14 @@ class _HomeScreenState extends State<HomeScreen>{
 
       body: selectedPage,
 
+      drawer: SideDrawer(),
+
       bottomNavigationBar: BottomNavigationBar(
         onTap: (index){_selectPage(index);},
+        currentIndex: _selectedPageIndex,
         items: const [
-        BottomNavigationBarItem(icon: Icon(Icons.abc),label: 'Categories'),
-        BottomNavigationBarItem(icon: Icon(Icons.abc),label: 'Favorites'),
+        BottomNavigationBarItem(icon: Icon(Icons.folder),label: 'Categories'),
+        BottomNavigationBarItem(icon: Icon(Icons.star),label: 'Favorites'),
         ]),
     );
   }
