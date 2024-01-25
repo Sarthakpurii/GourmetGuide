@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:gourmet/models/meal.dart';
 import 'package:gourmet/screens/categories-screen.dart';
+import 'package:gourmet/screens/filters-screen.dart';
 import 'package:gourmet/screens/meals-screen.dart';
 import 'package:gourmet/widgets/home-side-drawer.dart';
 
@@ -30,6 +31,12 @@ class _HomeScreenState extends State<HomeScreen>{
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
   }
 
+  void _setScreen(String identifier){
+    Navigator.of(context).pop();
+    if (identifier=='filters'){
+      Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>FilterScreen()));
+    }
+  }
 
   void _toggleFavorites(Meal meal){
     bool exist=_favoriteMeals.contains(meal);
@@ -63,7 +70,7 @@ class _HomeScreenState extends State<HomeScreen>{
 
       body: selectedPage,
 
-      drawer: SideDrawer(),
+      drawer: SideDrawer(setScreen: _setScreen,),
 
       bottomNavigationBar: BottomNavigationBar(
         onTap: (index){_selectPage(index);},

@@ -15,9 +15,11 @@ void main(){
       scaffoldBackgroundColor: const Color(0xFF22092C),
       textTheme: const TextTheme(
         displayLarge: TextStyle(color: Color(0xFFBE3144)),
-        bodyLarge: TextStyle(color: Colors.white),
+        bodyLarge: TextStyle(color: Color.fromARGB(255, 240, 95, 73)),
         // bodyMedium: TextStyle(color: Color(0xFFF05941)),
-        bodyMedium: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
+        bodyMedium: TextStyle(color: Color.fromARGB(255, 240, 95, 73)),
+        bodySmall: TextStyle(color: Color.fromARGB(255, 240, 95, 73)),
+        
       ),
       iconTheme: const IconThemeData(
         color: Color.fromARGB(255, 255, 255, 255),
