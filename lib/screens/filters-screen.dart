@@ -40,6 +40,7 @@ class _FilterScreenState extends State<FilterScreen>{
             title: Text('Lactose-Free',style: TextStyle(color: Color.fromARGB(255, 240, 95, 73)),),
             subtitle: Text('Only include Lactose-Free recipes',style: TextStyle(color: Colors.white),),),
 
+
           SwitchListTile(value: _isVeg,
             onChanged: (isChecked){
               setState(() {
