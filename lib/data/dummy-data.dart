@@ -406,4 +406,166 @@ const dummyMeals = [
     isVegetarian: true,
     isLactoseFree: true,
   ),
+  
+    Meal(id: 'm11',
+    categories: ['c1', 'c10'],
+    title: 'Vegetable Lasagna',
+    affordability: Affordability.Affordable,
+    complexity: Complexity.Moderate,
+    imageUrl: 'https://cdn.pixabay.com/photo/2022/11/08/05/34/lasagna-7577748_1280.jpg', // Placeholder URL
+    duration: 60,
+    ingredients: [
+      '2 Zucchinis, sliced',
+      '2 Carrots, sliced',
+      '1 Onion, chopped',
+      '3 Garlic Cloves, minced',
+      '200g Spinach',
+      '500g Ricotta Cheese',
+      '1 Egg',
+      '200g Mozzarella Cheese, shredded',
+      '500ml Tomato Sauce',
+      '12 Lasagna Noodles',
+      'Salt and Pepper',
+      'Olive Oil'
+    ],
+    steps: [
+      'Preheat the oven to 190°C.',
+      'In a pan, sauté onions, garlic, zucchinis, and carrots with olive oil.',
+      'Add spinach and cook until wilted. Season with salt and pepper.',
+      'In a bowl, mix ricotta cheese and egg.',
+      'Layer the lasagna: start with tomato sauce, then noodles, vegetables, ricotta mixture, and mozzarella. Repeat.',
+      'Cover with foil and bake for 40 minutes. Uncover and bake for another 15 minutes.'
+    ],
+    isGlutenFree: false,
+    isVegan: false,
+    isVegetarian: true,
+    isLactoseFree: false,
+  ),
+  // Meal 12
+  Meal(
+    id: 'm12',
+    categories: ['c3', 'c2'],
+    title: 'BBQ Chicken Wings',
+    affordability: Affordability.Affordable,
+    complexity: Complexity.Easy,
+    imageUrl: 'https://cdn.pixabay.com/photo/2023/05/08/15/59/bar-food-7979099_1280.jpg', // Placeholder URL
+    duration: 60,
+    ingredients: [
+      '1kg Chicken Wings',
+      '200ml BBQ Sauce',
+      '1 Tbsp Olive Oil',
+      '1 Tsp Paprika',
+      '1 Tsp Garlic Powder',
+      'Salt and Pepper'
+    ],
+    steps: [
+      'Preheat the oven to 200°C.',
+      'In a bowl, mix olive oil, paprika, garlic powder, salt, and pepper.',
+      'Add the chicken wings and toss to coat.',
+      'Place the wings on a baking sheet and bake for 45 minutes.',
+      'Brush the wings with BBQ sauce and bake for another 15 minutes.'
+    ],
+    isGlutenFree: true,
+    isVegan: false,
+    isVegetarian: false,
+    isLactoseFree: true,
+  ),
+  // Meal 13
+  Meal(
+    id: 'm13',
+    categories: ['c8', 'c10'],
+    title: 'Thai Green Curry',
+    affordability: Affordability.Expensive,
+    complexity: Complexity.Moderate,
+    imageUrl: 'https://cdn.pixabay.com/photo/2016/10/13/05/16/thai-curry-1736806_1280.jpg', // Placeholder URL
+    duration: 40,
+    ingredients: [
+      '500g Chicken Breast, cubed',
+      '400ml Coconut Milk',
+      '2 Tbsp Green Curry Paste',
+      '1 Aubergine, cubed',
+      '1 Red Bell Pepper, sliced',
+      '1 Onion, sliced',
+      '1 Tbsp Fish Sauce',
+      '1 Tsp Sugar',
+      'Basil Leaves',
+      'Cooked Rice, for serving'
+    ],
+    steps: [
+      'In a pot, fry the green curry paste until fragrant.',
+      'Add chicken and cook until it changes color.',
+      'Pour in coconut milk, bring to a simmer.',
+      'Add aubergine, bell pepper, and onion. Cook until vegetables are tender.',
+      'Season with fish sauce and sugar. Garnish with basil leaves.',
+      'Serve with rice.'
+    ],
+    isGlutenFree: true,
+    isVegan: false,
+    isVegetarian: false,
+    isLactoseFree: false,
+  ),
+  // Meal 14
+  Meal(
+    id: 'm14',
+    categories: ['c7', 'c10'],
+    title: 'French Toast',
+    affordability: Affordability.Cheap,
+    complexity: Complexity.Easy,
+    imageUrl: 'https://cdn.pixabay.com/photo/2018/08/06/14/03/breakfast-3587586_1280.jpg', // Placeholder URL
+    duration: 20,
+    ingredients: [
+      '4 Slices of Bread',
+      '2 Eggs',
+      '100ml Milk',
+      '1 Tsp Vanilla Extract',
+      '1 Tbsp Sugar',
+      'Butter',
+      'Maple Syrup'
+    ],
+    steps: [
+      'In a bowl, whisk together eggs, milk, vanilla extract, and sugar.',
+      'Dip each bread slice into the egg mixture, soaking both sides.',
+      'Heat butter in a skillet and cook each slice until golden brown on both sides.',
+      'Serve with maple syrup.'
+    ],
+    isGlutenFree: false,
+    isVegan: false,
+    isVegetarian: true,
+    isLactoseFree: false,
+  ),
+  // Meal 15
+  Meal(
+    id: 'm15',
+    categories: ['c9', 'c10'],
+    title: 'Ratatouille',
+    affordability: Affordability.Affordable,
+    complexity: Complexity.Moderate,
+    imageUrl: 'https://cdn.pixabay.com/photo/2020/06/19/08/26/ratatouille-5316201_1280.jpg', // Placeholder URL
+    duration: 90,
+    ingredients: [
+      '1 Eggplant, sliced',
+      '2 Zucchinis, sliced',
+      '2 Yellow Squash, sliced',
+      '2 Red Peppers, sliced',
+      '2 Tomatoes, sliced',
+      '1 Onion, chopped',
+      '3 Garlic Cloves, minced',
+      '400ml Tomato Sauce',
+      'Olive Oil',
+      'Herbs de Provence',
+      'Salt and Pepper'
+    ],
+    steps: [
+      'Preheat the oven to 190°C.',
+      'In a pot, sauté onions and garlic in olive oil.',
+      'Add tomato sauce, herbs, salt, and pepper. Simmer for 10 minutes.',
+      'In a baking dish, spread the sauce.',
+      'Arrange slices of eggplant, zucchini, squash, peppers, and tomatoes in alternating patterns on top of the sauce.',
+      'Cover with foil and bake for 40 minutes. Uncover and bake for another 20 minutes.'
+    ],
+    isGlutenFree: true,
+    isVegan: true,
+    isVegetarian: true,
+    isLactoseFree: true,
+  ),
 ];
