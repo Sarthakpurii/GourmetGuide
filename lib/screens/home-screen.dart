@@ -2,26 +2,28 @@
 import 'package:flutter/material.dart';
 import 'package:gourmet/data/dummy-data.dart';
 import 'package:gourmet/models/meal.dart';
+import 'package:gourmet/provider/favorite-meal-provider.dart';
+import 'package:gourmet/provider/meals-provider.dart';
 import 'package:gourmet/screens/categories-screen.dart';
 import 'package:gourmet/screens/filters-screen.dart';
 import 'package:gourmet/screens/meals-screen.dart';
 import 'package:gourmet/widgets/home-side-drawer.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class HomeScreen extends StatefulWidget{
+class HomeScreen extends ConsumerStatefulWidget{
   const HomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState(){
+  ConsumerState<HomeScreen> createState(){
     return _HomeScreenState();
   }
 }
 
-class _HomeScreenState extends State<HomeScreen>{
+class _HomeScreenState extends ConsumerState<HomeScreen>{
 
   
 
   int _selectedPageIndex=0;
-  final List<Meal> _favoriteMeals=[];
 
   Map<Filter,bool> filtersData={
     Filter.GluttenFree: false,
@@ -36,10 +38,6 @@ class _HomeScreenState extends State<HomeScreen>{
     });
   }
 
-  void showFavUpdateSnackbar(String message){
-    ScaffoldMessenger.of(context).clearSnackBars();
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
-  }
 
   void _setScreen(String identifier) async {
     Navigator.of(context).pop();
@@ -52,27 +50,13 @@ class _HomeScreenState extends State<HomeScreen>{
     }
   }
 
-  void _toggleFavorites(Meal meal){
-    bool exist=_favoriteMeals.contains(meal);
-
-    if (exist){
-      setState(() {
-        _favoriteMeals.remove(meal);
-        showFavUpdateSnackbar('Removed from Favorites');
-      });
-    } else {
-      _favoriteMeals.add(meal);
-      showFavUpdateSnackbar('Added to Favorites');
-    }
-  }
-
   @override
   Widget build(context){
 
-
+  final meals=ref.watch(mealsProvider);
   
 
-  List<Meal> _selectedMeals=dummyMeals.where((meal) {
+  List<Meal> _selectedMeals=meals.where((meal) {
     if (filtersData[Filter.GluttenFree]!&&!meal.isGlutenFree) return false;
     if (filtersData[Filter.LactoseFree]!&&!meal.isLactoseFree) return false;
     if (filtersData[Filter.Vegetarian]!&&!meal.isVegetarian) return false;
@@ -80,11 +64,12 @@ class _HomeScreenState extends State<HomeScreen>{
     return true;
   }).toList();
 
-    Widget selectedPage=CategoriesScreen(toggleFav: _toggleFavorites,selectedMeals: _selectedMeals,);
+    Widget selectedPage=CategoriesScreen(selectedMeals: _selectedMeals,);
     String selectedPageTitle='GourmetGuide';
 
     if (_selectedPageIndex==1){
-      selectedPage=MealsScreen(meals: _favoriteMeals,toggleFav: _toggleFavorites,);
+      final favoriteMeals=ref.watch(favoriteMealProvider);
+      selectedPage=MealsScreen(meals: favoriteMeals,);
       selectedPageTitle='Favorites';
     }
 

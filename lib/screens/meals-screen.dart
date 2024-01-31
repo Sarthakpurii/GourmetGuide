@@ -4,22 +4,31 @@ import 'package:gourmet/screens/meal-item-screen.dart';
 import 'package:gourmet/widgets/meal_item.dart';
 
 class MealsScreen extends StatelessWidget {
-  const MealsScreen({super.key, this.title, required this.meals, required this.toggleFav});
+  const MealsScreen({
+    super.key,
+    this.title,
+    required this.meals,
+  });
 
   final String? title;
   final List<Meal> meals;
-  final void Function(Meal meal) toggleFav;
 
   void _selectMeal(BuildContext context, Meal meal) {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (ctx) => MealItemScreen(meal: meal,toggleFav: toggleFav,)));
+    Navigator.of(context).push(MaterialPageRoute(
+        builder: (ctx) => MealItemScreen(
+              meal: meal,
+            )));
   }
 
   @override
   Widget build(context) {
     Widget mainContent = ListView.builder(
         itemCount: meals.length,
-        itemBuilder: (ctx, index) => MealItem(meal: meals[index],selectMeal: (){_selectMeal(context, meals[index]);}));
+        itemBuilder: (ctx, index) => MealItem(
+            meal: meals[index],
+            selectMeal: () {
+              _selectMeal(context, meals[index]);
+            }));
     if (meals.isEmpty) {
       mainContent = Center(
         child: Padding(
@@ -42,10 +51,9 @@ class MealsScreen extends StatelessWidget {
       );
     }
 
-  if (title==null){
-    return mainContent;
-  }
-
+    if (title == null) {
+      return mainContent;
+    }
 
     return Scaffold(
       appBar: AppBar(

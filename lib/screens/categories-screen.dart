@@ -7,9 +7,8 @@ import 'package:gourmet/screens/meals-screen.dart';
 import 'package:gourmet/widgets/category-widget-builder.dart';
 
 class CategoriesScreen extends StatelessWidget {
-  const CategoriesScreen({super.key, required this.toggleFav,required this.selectedMeals});
+  const CategoriesScreen({super.key,required this.selectedMeals});
 
-  final void Function(Meal meal) toggleFav;
   final List<Meal> selectedMeals;
 
   void _selectCategory(BuildContext context, Category category) {
@@ -17,7 +16,7 @@ class CategoriesScreen extends StatelessWidget {
         selectedMeals.where((meals) => meals.categories.contains(category.id)).toList();
 
     Navigator.of(context).push(MaterialPageRoute(
-        builder: (ctx) => MealsScreen(title: category.title, meals: filteredMeals,toggleFav: toggleFav,)));
+        builder: (ctx) => MealsScreen(title: category.title, meals: filteredMeals,)));
   }
 
   @override
