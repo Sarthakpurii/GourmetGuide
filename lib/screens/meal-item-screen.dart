@@ -74,7 +74,7 @@ class MealItemScreen extends ConsumerWidget {
                 children: [
                   Text(
                     e,
-                    textAlign: TextAlign.center,
+                    textAlign: TextAlign.justify,
                     style: GoogleFonts.aleo(fontSize: 17),
                   ),
                   const SizedBox(

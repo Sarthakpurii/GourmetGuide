@@ -20,7 +20,7 @@ void main(){
           displayLarge: TextStyle(color: Color(0xFFBE3144)),
           bodyLarge: TextStyle(color: Color.fromARGB(255, 240, 95, 73)),
           // bodyMedium: TextStyle(color: Color(0xFFF05941)),
-          bodyMedium: TextStyle(color: Color.fromARGB(255, 240, 95, 73)),
+          bodyMedium: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
           bodySmall: TextStyle(color: Color.fromARGB(255, 240, 95, 73)),
           
         ),
