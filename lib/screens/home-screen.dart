@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:gourmet/data/dummy-data.dart';
 import 'package:gourmet/models/meal.dart';
 import 'package:gourmet/provider/favorite-meal-provider.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 import 'package:gourmet/provider/meals-provider.dart';
 import 'package:gourmet/screens/categories-screen.dart';
 import 'package:gourmet/screens/filters-screen.dart';
@@ -54,7 +56,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen>{
   Widget build(context){
 
   final meals=ref.watch(mealsProvider);
-  
+     
 
   List<Meal> _selectedMeals=meals.where((meal) {
     if (filtersData[Filter.GluttenFree]!&&!meal.isGlutenFree) return false;
@@ -76,13 +78,20 @@ class _HomeScreenState extends ConsumerState<HomeScreen>{
 
 
     return Scaffold(
-      appBar: AppBar(title: Text(selectedPageTitle)),
+      appBar: AppBar(elevation: 3,title: Text(selectedPageTitle, textAlign: TextAlign.start,style: GoogleFonts.raleway(fontSize: 20,fontWeight: FontWeight.w600), )
+          ),
 
       body: selectedPage,
 
       drawer: SideDrawer(setScreen: _setScreen,),
 
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Color.fromARGB(255, 62, 12, 81),
+        elevation: 10,
+        unselectedItemColor: Colors.blueGrey,
+        selectedItemColor: Color.fromARGB(255, 238, 102, 81),
+        selectedLabelStyle: GoogleFonts.mulish(),
+        unselectedLabelStyle: GoogleFonts.mulish(),
         onTap: (index){_selectPage(index);},
         currentIndex: _selectedPageIndex,
         items: const [

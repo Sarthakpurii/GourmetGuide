@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:gourmet/models/meal.dart';
 import 'package:gourmet/screens/meal-item-screen.dart';
 import 'package:gourmet/widgets/meal_item.dart';
@@ -57,7 +58,7 @@ class MealsScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(title!),
+        title: Text(title!,style: GoogleFonts.raleway(fontSize: 20,fontWeight: FontWeight.w600)),
       ),
       body: mainContent,
     );

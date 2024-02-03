@@ -16,9 +16,10 @@ class MealItemScreen extends ConsumerWidget {
 
   @override
   Widget build(context,WidgetRef ref) {
+    int stepNo=0;
     return Scaffold(
       appBar: AppBar(
-        title: Text(meal.title),
+        title: Text(meal.title,style: GoogleFonts.raleway(fontSize: 20,fontWeight: FontWeight.w600)),
         actions: [
           IconButton(
               onPressed: () {
@@ -26,7 +27,7 @@ class MealItemScreen extends ConsumerWidget {
                 ScaffoldMessenger.of(context).clearSnackBars();
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(isAdded?'Added to Favorites':'Removed from Favorites')));
               },
-              icon: Icon(Icons.star))
+              icon: Icon(ref.watch(favoriteMealProvider).contains(meal)?Icons.star:Icons.star_border))
         ],
       ),
       body: SingleChildScrollView(
@@ -70,18 +71,22 @@ class MealItemScreen extends ConsumerWidget {
               height: 10,
             ),
             ...meal.steps.map(
-              (e) => Column(
-                children: [
-                  Text(
-                    e,
-                    textAlign: TextAlign.justify,
-                    style: GoogleFonts.aleo(fontSize: 17),
-                  ),
-                  const SizedBox(
-                    height: 8,
-                  )
-                ],
-              ),
+              (e)  {stepNo++;
+                return Padding(
+                padding: EdgeInsets.symmetric(horizontal: 14),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(stepNo.toString()+". "+e,
+                      
+                      style: GoogleFonts.mulish(fontSize: 17),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    )
+                  ],
+                ),
+              );}
             ),
           ],
         ),

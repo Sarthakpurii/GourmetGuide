@@ -32,10 +32,6 @@ void main(){
           color: Color(0xFF22092C),
           elevation: 3,
           foregroundColor: Color.fromARGB(255, 240, 95, 73),
-          titleTextStyle: GoogleFonts.philosopher(
-            fontSize: 20,
-            color: Color.fromARGB(255, 240, 95, 73),
-          ),
           iconTheme: IconThemeData(color: Color(0xFF872341)),
         ),
         floatingActionButtonTheme: const FloatingActionButtonThemeData(

@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 enum Filter {GluttenFree, LactoseFree,Vegetarian,Vegan}
 
@@ -32,7 +33,7 @@ class _FilterScreenState extends State<FilterScreen>{
   @override 
   Widget build(context){
     return Scaffold(
-      appBar: AppBar(title: Text('Available Filters'),),
+      appBar: AppBar(title: Text('Available Filters',style: GoogleFonts.raleway(fontSize: 20,fontWeight: FontWeight.w600)),),
       body: WillPopScope(
         onWillPop: () async {
           Navigator.of(context).pop({
