@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 // import 'package:gourmet/screens/categories-screen.dart';
 import 'package:gourmet/screens/home-screen.dart';
+import 'package:gourmet/screens/meals-screen.dart';
 
 
 void main(){

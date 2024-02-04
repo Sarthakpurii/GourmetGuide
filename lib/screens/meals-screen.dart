@@ -32,23 +32,25 @@ class MealsScreen extends StatelessWidget {
             }));
     if (meals.isEmpty) {
       mainContent = Center(
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(26, 0, 0, 50),
-          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-            Image.asset(
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Padding(
+            padding: EdgeInsets.only(left: 30),
+            child: Image.asset(
               'assets/icons/empty.png',
               scale: 3,
-              color: Theme.of(context).textTheme.bodyMedium!.color,
+              color: Colors.white70,
+              
             ),
-            const SizedBox(
-              height: 15,
-            ),
-            const Text(
-              'No Recipes to show...',
-              textAlign: TextAlign.start,
-            )
-          ]),
-        ),
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          Text(
+            'No Recipes Found.',
+            textAlign: TextAlign.start,
+            style: GoogleFonts.mulish(fontSize: 20,fontWeight: FontWeight.w600),
+          )
+        ]),
       );
     }
 

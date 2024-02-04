@@ -53,8 +53,8 @@ class _FilterScreenState extends State<FilterScreen>{
                   _isGluttenFree=isChecked;
                 });
               },
-              title: Text('Glutten-Free',style: TextStyle(color: Color.fromARGB(255, 240, 95, 73)),),
-              subtitle: Text('Only include Glutten-Free recipes',style: TextStyle(color: Colors.white),),),
+              title: Text('Glutten-Free',style: GoogleFonts.mulish(color: Color.fromARGB(255, 240, 95, 73)),),
+              subtitle: Text('Only include Glutten-Free recipes',style: GoogleFonts.mulish(color: Colors.white),),),
         
             SwitchListTile(value: _isLactoseFree,
               onChanged: (isChecked){
@@ -62,8 +62,8 @@ class _FilterScreenState extends State<FilterScreen>{
                   _isLactoseFree=isChecked;
                 });
               },
-              title: Text('Lactose-Free',style: TextStyle(color: Color.fromARGB(255, 240, 95, 73)),),
-              subtitle: Text('Only include Lactose-Free recipes',style: TextStyle(color: Colors.white),),),
+              title: Text('Lactose-Free',style: GoogleFonts.mulish(color: Color.fromARGB(255, 240, 95, 73)),),
+              subtitle: Text('Only include Lactose-Free recipes',style: GoogleFonts.mulish(color: Colors.white),),),
         
         
         
@@ -73,8 +73,8 @@ class _FilterScreenState extends State<FilterScreen>{
                   _isVeg=isChecked;
                 });
               },
-              title: Text('Vegetarian',style: TextStyle(color: Color.fromARGB(255, 240, 95, 73)),),
-              subtitle: Text('Only include Vegetarian recipes',style: TextStyle(color: Colors.white),),),
+              title: Text('Vegetarian',style: GoogleFonts.mulish(color: Color.fromARGB(255, 240, 95, 73)),),
+              subtitle: Text('Only include Vegetarian recipes',style: GoogleFonts.mulish(color: Colors.white),),),
         
             SwitchListTile(value: _isVegan,
               onChanged: (isChecked){
@@ -82,8 +82,8 @@ class _FilterScreenState extends State<FilterScreen>{
                   _isVegan=isChecked;
                 });
               },
-              title: Text('Vegan',style: TextStyle(color: Color.fromARGB(255, 240, 95, 73)),),
-              subtitle: Text('Only include Vegan recipes',style: TextStyle(color: Colors.white),),),
+              title: Text('Vegan',style: GoogleFonts.mulish(color: Color.fromARGB(255, 240, 95, 73)),),
+              subtitle: Text('Only include Vegan recipes',style: GoogleFonts.mulish(color: Colors.white),),),
           ],
         ),
       )
