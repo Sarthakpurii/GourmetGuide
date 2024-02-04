@@ -27,15 +27,26 @@ class MealItemScreen extends ConsumerWidget {
                 ScaffoldMessenger.of(context).clearSnackBars();
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(isAdded?'Added to Favorites':'Removed from Favorites')));
               },
-              icon: Icon(ref.watch(favoriteMealProvider).contains(meal)?Icons.star:Icons.star_border))
+              icon: AnimatedSwitcher(
+                duration: const Duration(milliseconds: 400),
+                transitionBuilder: (child,animation){
+                  return RotationTransition(turns: Tween(begin: 0.8,end: 1.0).animate(animation),child: child,);
+                },
+                child: Icon(ref.watch(favoriteMealProvider).contains(meal)?Icons.star:Icons.star_border, key: ValueKey(ref.watch(favoriteMealProvider).contains(meal)),)))
         ],
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            FadeInImage(
-                placeholder: MemoryImage(kTransparentImage),
-                image: NetworkImage(meal.imageUrl)),
+            Hero(
+              tag: meal.id,
+              child: FadeInImage(
+                  placeholder: MemoryImage(kTransparentImage),
+                  image: NetworkImage(meal.imageUrl),
+                  height: 350,
+                  width: double.infinity,
+                  fit: BoxFit.cover,),
+            ),
             const SizedBox(
               height: 12,
             ),
